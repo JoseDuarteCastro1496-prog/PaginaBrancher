@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>CV Brancher – Crea tu CV Profesional en Minutos</title>
+  <meta name="description" content="CV Brancher es la app de escritorio más inteligente para crear currículums profesionales. Disponible en Microsoft Store." />
+  <link rel="icon" href="icon.png" type="image/png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ─────────────────── NAVBAR ─────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <img src="iconwhite.png" alt="CV Brancher logo" class="logo-img" />
+        <span class="logo-text">CV <strong>Brancher</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#caracteristicas" data-i18n="nav.features">Características</a></li>
+        <li><a href="#como-funciona" data-i18n="nav.how">Cómo funciona</a></li>
+        <li><a href="#precios" data-i18n="nav.pricing">Precios</a></li>
+      </ul>
+      <a href="https://apps.microsoft.com/store/detail/9P40K83375QJ?cid=DevShareMWAPCS" target="_blank" rel="noopener" class="btn btn-primary nav-cta">
+        <i class="ph ph-microsoft-store-logo"></i> <span data-i18n="nav.cta">Obtener ahora</span>
+      </a>
+      <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma / Change language">
+        <i class="ph ph-globe"></i>
+        <span id="langLabel">ES</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─────────────────── HERO ─────────────────── -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
+    <div class="container">
+    <div class="hero-layout">
+      <div class="hero-inner">
+      <h1 class="hero-title" data-i18n="hero.title">
+        Tu próximo trabajo<br />
+        empieza con un<br />
+        <span class="gradient-text">CV perfecto</span>
+      </h1>
+
+      <p class="hero-subtitle" data-i18n="hero.subtitle">
+        CV Brancher es la aplicación de escritorio que transforma la forma en que creas tu currículum.
+        Plantillas profesionales, editor inteligente y exportación instantánea en PDF.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://apps.microsoft.com/store/detail/9P40K83375QJ?cid=DevShareMWAPCS" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          <i class="ph ph-microsoft-store-logo"></i>
+          <span data-i18n="hero.cta">Disponible en Microsoft Store</span>
+        </a>
+      </div>
+    </div><!-- /hero-inner -->
+
+    <!-- App mockup floating -->
+    <div class="hero-mockup-wrap">
+      <div class="hero-mockup">
+        <!-- Demo video (YouTube). Loop sin brinco mediante YT IFrame API -->
+        <div id="hero-yt-player" class="hero-video"></div>
+        <div class="mockup-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="mockup-title">CV Brancher — Editor</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-sidebar">
+            <div class="sb-item active"><i class="ph ph-user-circle"></i> Perfil</div>
+            <div class="sb-item"><i class="ph ph-briefcase"></i> Experiencia</div>
+            <div class="sb-item"><i class="ph ph-graduation-cap"></i> Educación</div>
+            <div class="sb-item"><i class="ph ph-code"></i> Habilidades</div>
+            <div class="sb-item"><i class="ph ph-star"></i> Plantillas</div>
+            <div class="sb-item"><i class="ph ph-export"></i> Exportar</div>
+          </div>
+          <div class="mockup-editor">
+            <div class="editor-header">
+              <div class="editor-avatar"></div>
+              <div>
+                <div class="editor-name">Nombre Apellido</div>
+                <div class="editor-role">Desarrollador Full Stack</div>
+              </div>
+            </div>
+            <div class="editor-section">
+              <div class="section-label">EXPERIENCIA</div>
+              <div class="exp-item">
+                <div class="exp-title"></div>
+                <div class="exp-sub"></div>
+              </div>
+              <div class="exp-item">
+                <div class="exp-title short"></div>
+                <div class="exp-sub"></div>
+              </div>
+            </div>
+            <div class="editor-section">
+              <div class="section-label">HABILIDADES</div>
+              <div class="skills-row">
+                <div class="skill-tag">React</div>
+                <div class="skill-tag">Node.js</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">Git</div>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-preview">
+            <div class="preview-label">Vista previa</div>
+            <div class="preview-page">
+              <div class="prev-header"></div>
+              <div class="prev-line"></div>
+              <div class="prev-line short"></div>
+              <div class="prev-block"></div>
+              <div class="prev-line"></div>
+              <div class="prev-line medium"></div>
+              <div class="prev-block small"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mockup-glow"></div>
+      <div class="hero-video-features">
+        <div class="vf-item"><i class="ph ph-check-circle"></i> <span data-i18n="hero.vf1">Editor en tiempo real</span></div>
+        <div class="vf-item"><i class="ph ph-check-circle"></i> <span data-i18n="hero.vf2">Cambio de plantilla instantáneo</span></div>
+        <div class="vf-item"><i class="ph ph-check-circle"></i> <span data-i18n="hero.vf3">Exportación a PDF en 1 clic</span></div>
+        <div class="vf-item"><i class="ph ph-check-circle"></i> <span data-i18n="hero.vf4">Gestión de múltiples versiones</span></div>
+      </div>
+    </div><!-- /hero-mockup-wrap -->
+    </div><!-- /hero-layout -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- ─────────────────── LOGOS / CONFIANZA ─────────────────── -->
+  <section class="trust-bar">
+    <div class="container">
+      <p class="trust-label" data-i18n="trust.label">Diseñado para profesionales de todas las industrias</p>
+      <div class="trust-icons">
+        <div class="trust-icon"><i class="ph ph-buildings"></i> <span data-i18n="trust.corporate">Corporativo</span></div>
+        <div class="trust-icon"><i class="ph ph-laptop-code"></i> <span data-i18n="trust.tech">Tech</span></div>
+        <div class="trust-icon"><i class="ph ph-stethoscope"></i> <span data-i18n="trust.health">Salud</span></div>
+        <div class="trust-icon"><i class="ph ph-paint-brush"></i> <span data-i18n="trust.creative">Creativo</span></div>
+        <div class="trust-icon"><i class="ph ph-chart-line-up"></i> <span data-i18n="trust.finance">Finanzas</span></div>
+        <div class="trust-icon"><i class="ph ph-graduation-cap"></i> <span data-i18n="trust.education">Educación</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── CARACTERÍSTICAS ─────────────────── -->
+  <section class="features" id="caracteristicas">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="features.tag">Características</div>
+        <h2 class="section-title" data-i18n="features.title">Todo lo que necesitas para <span class="gradient-text">destacar</span></h2>
+        <p class="section-subtitle" data-i18n="features.subtitle">CV Brancher combina diseño profesional con tecnología inteligente para que tu CV abra puertas.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card feature-card--large">
+          <div class="feature-icon-wrap">
+            <i class="ph ph-magic-wand"></i>
+          </div>
+          <h3 data-i18n="feat.smart.t">MCP server integrado</h3>
+          <p data-i18n="feat.smart.d">Con el MCP integrado puedes crear CVs automáticamente con Claude u opencode.</p>
+          <div class="feature-visual">
+            <div class="fv-bar"></div>
+            <div class="fv-bar short"></div>
+            <div class="fv-bar"></div>
+            <div class="fv-bar medium"></div>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <i class="ph ph-layout"></i>
+          </div>
+          <h3 data-i18n="feat.templates.t">Plantillas premium</h3>
+          <p data-i18n="feat.templates.d">Diseños modernos y clásicos para cualquier industria. Actualizadas constantemente.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <i class="ph ph-file-pdf"></i>
+          </div>
+          <h3 data-i18n="feat.export.t">Exportación perfecta</h3>
+          <p data-i18n="feat.export.d">Genera PDFs de alta resolución listos para enviar, imprimir o subir a portales de empleo.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <i class="ph ph-arrows-split"></i>
+          </div>
+          <h3 data-i18n="feat.multiversion.t">Multi-versión de CV</h3>
+          <p data-i18n="feat.multiversion.d">Crea y gestiona distintas versiones de tu currículum para diferentes puestos o industrias desde un solo lugar.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <i class="ph ph-translate"></i>
+          </div>
+          <h3 data-i18n="feat.multilang.t">Multiidioma</h3>
+          <p data-i18n="feat.multilang.d">Genera tu CV en español o inglés con solo un clic.</p>
+        </div>
+
+        <div class="feature-card feature-card--large">
+          <div class="feature-icon-wrap">
+            <i class="ph ph-eye"></i>
+          </div>
+          <h3 data-i18n="feat.preview.t">Vista previa en tiempo real</h3>
+          <p data-i18n="feat.preview.d">Cada cambio que realizas se refleja instantáneamente en la vista previa del documento. Sin sorpresas al exportar.</p>
+          <div class="feature-visual preview-vis">
+            <div class="pv-doc">
+              <div class="pv-line"></div>
+              <div class="pv-line short"></div>
+              <div class="pv-block"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <i class="ph ph-shield-check"></i>
+          </div>
+          <h3 data-i18n="feat.offline.t">100% offline</h3>
+          <p data-i18n="feat.offline.d">Tus datos nunca salen de tu equipo. Privacidad total sin necesidad de conexión.</p>
+        </div>
+
+        <!-- Guardado automático: oculto temporalmente (quita "hidden" para mostrarlo) -->
+        <div class="feature-card" hidden>
+          <div class="feature-icon-wrap">
+            <i class="ph ph-cloud-arrow-up"></i>
+          </div>
+          <h3 data-i18n="feat.autosave.t">Guardado automático</h3>
+          <p data-i18n="feat.autosave.d">Nunca pierdas tu progreso. CV Brancher guarda tu trabajo en segundo plano continuamente.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── CÓMO FUNCIONA ─────────────────── -->
+  <section class="how-it-works" id="como-funciona">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="how.tag">Proceso</div>
+        <h2 class="section-title" data-i18n="how.title">Tu CV listo en <span class="gradient-text">3 pasos</span></h2>
+        <p class="section-subtitle" data-i18n="how.subtitle">Sin curva de aprendizaje. Sin complicaciones. Solo resultados.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-icon"><i class="ph ph-user-plus"></i></div>
+          <h3 data-i18n="how.step1.t">Completa tu perfil</h3>
+          <p data-i18n="how.step1.d">Ingresa tu información personal, experiencia laboral, educación y habilidades en formularios claros y guiados.</p>
+        </div>
+        <div class="step-arrow"><i class="ph ph-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-icon"><i class="ph ph-palette"></i></div>
+          <h3 data-i18n="how.step2.t">Elige tu plantilla</h3>
+          <p data-i18n="how.step2.d">Explora diseños profesionales y aplica el que mejor represente tu perfil e industria.</p>
+        </div>
+        <div class="step-arrow"><i class="ph ph-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-icon"><i class="ph ph-download-simple"></i></div>
+          <h3 data-i18n="how.step3.t">Exporta y envía</h3>
+          <p data-i18n="how.step3.d">Descarga tu CV en PDF de calidad profesional y comienza a postular con confianza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── PLANTILLAS SHOWCASE ─────────────────── -->
+  <section class="templates-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="tpl.tag">Plantillas</div>
+        <h2 class="section-title" data-i18n="tpl.title">Diseños que <span class="gradient-text">impresionan</span></h2>
+        <p class="section-subtitle" data-i18n="tpl.subtitle">Plantillas diseñadas por expertos en RRHH y diseño gráfico.</p>
+      </div>
+
+      <div class="templates-grid">
+        <div class="template-card active">
+          <div class="tpl-preview tpl-modern">
+            <div class="tpl-header-bar"></div>
+            <div class="tpl-name-block">
+              <div class="tpl-avatar"></div>
+              <div>
+                <div class="tpl-h1"></div>
+                <div class="tpl-h2"></div>
+              </div>
+            </div>
+            <div class="tpl-body">
+              <div class="tpl-line"></div>
+              <div class="tpl-line short"></div>
+              <div class="tpl-line"></div>
+            </div>
+          </div>
+          <div class="tpl-info">
+            <span class="tpl-name" data-i18n="tpl.name1">Moderno Pro</span>
+            <span class="tpl-tag" data-i18n="tpl.tag1">Popular</span>
+          </div>
+        </div>
+
+        <div class="template-card">
+          <div class="tpl-preview tpl-minimal">
+            <div class="tpl-side-bar"></div>
+            <div class="tpl-main">
+              <div class="tpl-h1 dark"></div>
+              <div class="tpl-h2 dark"></div>
+              <div class="tpl-line dark"></div>
+              <div class="tpl-line short dark"></div>
+            </div>
+          </div>
+          <div class="tpl-info">
+            <span class="tpl-name" data-i18n="tpl.name2">Minimalista</span>
+            <span class="tpl-tag" data-i18n="tpl.tag2">Elegante</span>
+          </div>
+        </div>
+
+        <div class="template-card">
+          <div class="tpl-preview tpl-creative">
+            <div class="tpl-top-accent"></div>
+            <div class="tpl-grid">
+              <div class="tpl-col left-col">
+                <div class="tpl-circle"></div>
+                <div class="tpl-h1 sm"></div>
+                <div class="tpl-line sm"></div>
+              </div>
+              <div class="tpl-col right-col">
+                <div class="tpl-line"></div>
+                <div class="tpl-line short"></div>
+                <div class="tpl-line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tpl-info">
+            <span class="tpl-name" data-i18n="tpl.name3">Creativo</span>
+            <span class="tpl-tag" data-i18n="tpl.tag3">Diseño</span>
+          </div>
+        </div>
+
+        <div class="template-card">
+          <div class="tpl-preview tpl-executive">
+            <div class="tpl-exec-header">
+              <div class="tpl-h1 white"></div>
+              <div class="tpl-h2 white-sm"></div>
+            </div>
+            <div class="tpl-exec-body">
+              <div class="tpl-line"></div>
+              <div class="tpl-line short"></div>
+              <div class="tpl-line"></div>
+            </div>
+          </div>
+          <div class="tpl-info">
+            <span class="tpl-name" data-i18n="tpl.name4">Ejecutivo</span>
+            <span class="tpl-tag" data-i18n="tpl.tag4">Corporativo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="templates-cta">
+        <p data-i18n="tpl.more">Y mucho más...</p>
+        <a href="#descargar" class="btn btn-outline">
+          <i class="ph ph-squares-four"></i>
+          <span data-i18n="tpl.cta">Explorar todas las plantillas</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── TESTIMONIOS (oculto temporalmente: quita "hidden" para mostrarlo) ─────────────────── -->
+  <section class="testimonials" hidden>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="test.tag">Testimonios</div>
+        <h2 class="section-title" data-i18n="test.title">Lo que dicen <span class="gradient-text">nuestros usuarios</span></h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="test.1">"CV Brancher me ayudó a conseguir entrevistas en 3 empresas la primera semana. Las plantillas son increíblemente profesionales y el editor es muy intuitivo."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av1">MR</div>
+            <div>
+              <strong>Miguel R.</strong>
+              <span data-i18n="test.role1">Desarrollador Backend</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card featured">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="test.2">"Llevaba meses sin actualizar mi CV porque no sabía cómo organizarlo. Con CV Brancher lo tuve listo en 20 minutos. ¡Increíble!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av2">SP</div>
+            <div>
+              <strong>Sofía P.</strong>
+              <span data-i18n="test.role2">Diseñadora UX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p data-i18n="test.3">"La función de múltiples versiones es oro puro. Tengo un CV para startups y otro para empresas grandes. Todo desde la misma app."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar av3">CA</div>
+            <div>
+              <strong>Carlos A.</strong>
+              <span data-i18n="test.role3">Product Manager</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── PRECIOS ─────────────────── -->
+  <section class="pricing" id="precios">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="price.tag">Precios</div>
+        <h2 class="section-title" data-i18n="price.title">Invierte en tu <span class="gradient-text">carrera</span></h2>
+        <p class="section-subtitle" data-i18n="price.subtitle">Un precio justo por una herramienta que puede cambiar tu vida profesional.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card trial-card">
+          <div class="trial-badge" data-i18n="price.trial.badge">⏱ Prueba gratuita · 3 días</div>
+          <div class="plan-name" data-i18n="price.trial.name">Trial</div>
+          <div class="plan-price"><span class="price-amount">$0</span></div>
+          <div class="plan-period" data-i18n="price.free.period">Acceso completo sin restricciones</div>
+          <ul class="plan-features">
+            <li><i class="ph ph-check"></i> <span data-i18n="price.free.f1">Todas las plantillas incluidas</span></li>
+            <li><i class="ph ph-check"></i> <span data-i18n="price.free.f2">Exportación HD en PDF</span></li>
+            <li><i class="ph ph-check"></i> <span data-i18n="price.free.f3">CVs ilimitados</span></li>
+            <li><i class="ph ph-check"></i> <span data-i18n="price.free.f4">Multi-versión ilimitada</span></li>
+            <li><i class="ph ph-check"></i> <span data-i18n="price.free.f6">Generación de CV con IA</span></li>
+            <li><i class="ph ph-check"></i> <span data-i18n="price.free.f7">MCP · integración completa</span></li>
+          </ul>
+          <a href="https://apps.microsoft.com/store/detail/9P40K83375QJ?cid=DevShareMWAPCS" target="_blank" rel="noopener" class="btn btn-outline">
+            <span data-i18n="price.free.cta">Descargar gratis</span>
+          </a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="plan-badge" data-i18n="price.badge">Más popular</div>
+          <div class="plan-launch-badge" data-i18n="price.launch">🚀 Precio lanzamiento</div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">
+            <span class="price-amount">$6.99</span>
+            <span class="price-original">$9.99</span>
+          </div>
+          <div class="plan-period" data-i18n="price.pro.period">pago único · sin suscripción</div>
+          <ul class="plan-features">
+            <li><i class="ph ph-check"></i> <span data-i18n="price.pro.f1">Plantillas premium</span></li>
+            <li><i class="ph ph-check"></i> <span data-i18n="price.pro.f2">Exportación HD en PDF</span></li>
+            <li><i class="ph ph-check"></i> <span data-i18n="price.pro.f3">CVs ilimitados</span></li>
+            <li><i class="ph ph-check"></i> <span data-i18n="price.pro.f4">Multi-versión ilimitada</span></li>
+            <li><i class="ph ph-check"></i> <span data-i18n="price.pro.f5">Actualizaciones de por vida</span></li>
+          </ul>
+          <a href="https://apps.microsoft.com/store/detail/9P40K83375QJ?cid=DevShareMWAPCS" target="_blank" rel="noopener" class="btn btn-primary">
+            <i class="ph ph-windows-logo"></i>
+            <span data-i18n="price.pro.cta">Obtener en Microsoft Store</span>
+          </a>
+        </div>
+      </div>
+
+      <p class="pricing-note">
+        <i class="ph ph-shield-check"></i>
+        <span data-i18n="price.note">Compra segura a través de Microsoft Store. Garantía de reembolso de 14 días.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ─────────────────── CTA FINAL ─────────────────── -->
+  <section class="final-cta" id="descargar">
+    <div class="cta-glow"></div>
+    <div class="container">
+      <img src="iconwhite.png" alt="CV Brancher" class="cta-logo" />
+      <h2 data-i18n="final.title">Empieza hoy. Tu carrera<br />te lo va a agradecer.</h2>
+      <p data-i18n="final.subtitle">Descarga CV Brancher gratis desde Microsoft Store y crea tu primer CV profesional en minutos.</p>
+      <a href="https://apps.microsoft.com/store/detail/9P40K83375QJ?cid=DevShareMWAPCS" target="_blank" rel="noopener" class="btn btn-primary btn-xl">
+        <i class="ph ph-windows-logo"></i>
+        <span data-i18n="final.cta">Descargar en Microsoft Store</span>
+      </a>
+      <div class="store-badge">
+        <i class="ph ph-shield-star"></i>
+        <span data-i18n="final.badge">Aplicación certificada por Microsoft · 100% segura</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────── FOOTER ─────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="iconwhite.png" alt="CV Brancher" class="logo-img" />
+          <span class="logo-text">CV <strong>Brancher</strong></span>
+        </a>
+        <p data-i18n="footer.tagline">La forma más inteligente de crear tu currículum profesional en Windows.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4 data-i18n="footer.product">Producto</h4>
+          <a href="#caracteristicas" data-i18n="footer.nav.features">Características</a>
+          <a href="#como-funciona" data-i18n="footer.nav.how">Cómo funciona</a>
+          <a href="#precios" data-i18n="footer.nav.pricing">Precios</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.legal">Legal</h4>
+          <a href="#" data-i18n="footer.privacy">Privacidad</a>
+          <a href="#" data-i18n="footer.terms">Términos de uso</a>
+          <a href="#" data-i18n="footer.cookies">Política de cookies</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Contacto</h4>
+          <a href="mailto:jose.duartecastro1496@gmail.com">jose.duartecastro1496@gmail.com</a>
+          <a href="#" data-i18n="footer.help">Centro de ayuda</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span data-i18n="footer.copyright">© 2026 CV Brancher. Todos los derechos reservados.</span>
+        <span data-i18n="footer.made">Hecho<i class="ph ph-heart-fill" style="color:#35cc33"></i> para profesionales</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- YouTube IFrame API: loop sin brinco -->
+  <script>
+    // Carga la API de YouTube de forma asíncrona
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var ytPlayer;
+    function onYouTubeIframeAPIReady() {
+      ytPlayer = new YT.Player('hero-yt-player', {
+        videoId: 'AsnHeDmIQYE',
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          controls: 0,
+          rel: 0,
+          showinfo: 0,
+          modestbranding: 1,
+          iv_load_policy: 3,
+          disablekb: 1,
+          playsinline: 1
+          // NO usamos loop=1 de YouTube porque causa el brinco;
+          // el loop lo manejamos nosotros con onStateChange
+        },
+        events: {
+          onStateChange: function(e) {
+            // YT.PlayerState.ENDED === 0
+            if (e.data === YT.PlayerState.ENDED) {
+              ytPlayer.seekTo(0);
+              ytPlayer.playVideo();
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

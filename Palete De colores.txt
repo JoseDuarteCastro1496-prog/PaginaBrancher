@@ -1,0 +1,7 @@
+:root {
+  --cvs-primary-dark: #004080;
+  --cvs-primary: #0066b2;
+  --cvs-cyan: #00asb5;
+  --cvs-accent-green: #35cc33;
+  --cvs-gray: #666666;
+}
