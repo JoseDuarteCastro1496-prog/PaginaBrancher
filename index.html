@@ -78,6 +78,9 @@
       <div class="hero-mockup">
         <!-- Demo video (YouTube). Loop sin brinco mediante YT IFrame API -->
         <div id="hero-yt-player" class="hero-video"></div>
+        <button id="yt-mute-btn" class="yt-mute-btn" aria-label="Activar sonido">
+          <i class="ph ph-speaker-slash"></i>
+        </button>
         <div class="mockup-bar">
           <span class="dot red"></span>
           <span class="dot yellow"></span>
@@ -562,6 +565,8 @@
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     var ytPlayer;
+    var ytMuted = true;
+
     function onYouTubeIframeAPIReady() {
       ytPlayer = new YT.Player('hero-yt-player', {
         videoId: 'AsnHeDmIQYE',
@@ -575,12 +580,9 @@
           iv_load_policy: 3,
           disablekb: 1,
           playsinline: 1
-          // NO usamos loop=1 de YouTube porque causa el brinco;
-          // el loop lo manejamos nosotros con onStateChange
         },
         events: {
           onStateChange: function(e) {
-            // YT.PlayerState.ENDED === 0
             if (e.data === YT.PlayerState.ENDED) {
               ytPlayer.seekTo(0);
               ytPlayer.playVideo();
@@ -589,6 +591,22 @@
         }
       });
     }
+
+    document.getElementById('yt-mute-btn').addEventListener('click', function() {
+      if (!ytPlayer) return;
+      if (ytMuted) {
+        ytPlayer.unMute();
+        ytPlayer.setVolume(100);
+        ytMuted = false;
+        this.innerHTML = '<i class="ph ph-speaker-high"></i>';
+        this.setAttribute('aria-label', 'Silenciar');
+      } else {
+        ytPlayer.mute();
+        ytMuted = true;
+        this.innerHTML = '<i class="ph ph-speaker-slash"></i>';
+        this.setAttribute('aria-label', 'Activar sonido');
+      }
+    });
   </script>
 </body>
 </html>
